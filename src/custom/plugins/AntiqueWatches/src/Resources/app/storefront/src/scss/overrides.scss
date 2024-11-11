@@ -6,3 +6,8 @@ This file is used to override default SCSS variables from the Shopware Storefron
 Because of the !default flags, theme variable overrides have to be declared beforehand.
 https://getbootstrap.com/docs/5.3/customize/sass/#variable-defaults
 */
+
+$font-family-base: 'Muli', Helvetica, Arial, sans-serif;
+$headings-font-family: 'Muli', Helvetica, Arial, sans-serif;
+
+$asset-path: '#{$sw-asset-public-url}/bundles/assets' !default;

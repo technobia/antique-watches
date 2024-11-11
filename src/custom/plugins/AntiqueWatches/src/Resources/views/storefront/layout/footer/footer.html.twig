@@ -1,0 +1,299 @@
+{% block layout_footer_inner_container %}
+    <div class="container">
+        {% block layout_footer_navigation %}
+            <div
+                id="footerColumns"
+                class="row footer-columns"
+                data-collapse-footer-columns="true"
+                role="list"
+            >
+                {% block layout_footer_navigation_hotline %}
+                    <div class="col-md-3 footer-column js-footer-column">
+                        {% block layout_footer_navigation_hotline_headline %}
+                            <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+                                 id="collapseFooterHotlineTitle"
+                                 data-bs-target="#collapseFooterHotline"
+                                 aria-expanded="true"
+                                 aria-controls="collapseFooterHotline"
+                                 role="listitem">
+                                {{ 'footer.serviceHotlineHeadline'|trans|sw_sanitize }}
+
+                                {% block layout_footer_navigation_hotline_icons %}
+                                    <div class="footer-column-toggle">
+                                        <span class="footer-plus-icon">
+                                            {% sw_icon 'plus' style {
+                                                ariaLabel: 'general.expand'|trans
+                                            } %}
+                                        </span>
+                                        <span class="footer-minus-icon">
+                                            {% sw_icon 'minus' style {
+                                                ariaLabel: 'general.collapse'|trans
+                                            } %}
+                                        </span>
+                                    </div>
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+
+                        {% block layout_footer_navigation_hotline_content %}
+                            <div id="collapseFooterHotline"
+                                 class="footer-column-content collapse js-footer-column-content footer-contact"
+                                 aria-labelledby="collapseFooterHotlineTitle"
+                                 role="listitem">
+                                <div class="footer-column-content-inner">
+                                    <p class="footer-contact-hotline">
+                                        {{ 'footer.serviceHotline'|trans|sw_sanitize }}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+
+                {% block layout_footer_navigation_columns %}
+                    {% for root in page.footer.navigation.tree %}
+                        {% block layout_footer_navigation_column %}
+                            <div class="col-md-3 footer-column js-footer-column">
+                                {% block layout_footer_navigation_information_headline %}
+                                    <div class="footer-column-headline footer-headline js-collapse-footer-column-trigger"
+                                         data-bs-target="#collapseFooterTitle{{ loop.index }}"
+                                         aria-expanded="true"
+                                         aria-controls="collapseFooter{{ loop.index }}">
+
+                                        {% if root.category.type == 'folder' %}
+                                            {{ root.category.translated.name }}
+                                        {% else %}
+                                            <a href="{{ category_url(root.category) }}"
+                                               {% if category_linknewtab(root.category) %}target="_blank"{% endif %}
+                                               title="{{ root.category.translated.name }}">
+                                                {{ root.category.translated.name }}
+                                            </a>
+                                        {% endif %}
+
+                                        {% block layout_footer_navigation_information_icons %}
+                                            <div class="footer-column-toggle">
+                                                <span class="footer-plus-icon">
+                                                    {% sw_icon 'plus' style {
+                                                        ariaLabel: 'general.expand'|trans
+                                                    } %}
+                                                </span>
+                                                <span class="footer-minus-icon">
+                                                    {% sw_icon 'minus' style {
+                                                        ariaLabel: 'general.collapse'|trans
+                                                    } %}
+                                                </span>
+                                            </div>
+                                        {% endblock %}
+                                    </div>
+                                {% endblock %}
+
+                                {% block layout_footer_navigation_information_content %}
+                                    <div id="collapseFooter{{ loop.index }}"
+                                         class="footer-column-content collapse js-footer-column-content"
+                                         aria-labelledby="collapseFooterTitle{{ loop.index }}">
+                                        <div class="footer-column-content-inner">
+                                            {% block layout_footer_navigation_information_links %}
+                                                <ul class="list-unstyled">
+                                                    {% for treeItem in root.children %}
+                                                        {% set category = treeItem.category %}
+                                                        {% set name = category.translated.name %}
+
+                                                        {% block layout_footer_navigation_information_link_item %}
+                                                            <li class="footer-link-item">
+                                                                {% block layout_footer_navigation_information_link %}
+                                                                    {% if category.type == 'folder' %}
+                                                                        <div>{{ name }}</div>
+                                                                    {% else %}
+                                                                        <a class="footer-link"
+                                                                           href="{{ category_url(category) }}"
+                                                                           {% if category_linknewtab(category) %}target="_blank"{% endif %}
+                                                                           title="{{ name }}">
+                                                                            {{ name }}
+                                                                        </a>
+                                                                    {% endif %}
+                                                                {% endblock %}
+                                                            </li>
+                                                        {% endblock %}
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endblock %}
+                                        </div>
+                                    </div>
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                    {% endfor %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        <div
+            id="footerColumnsTwo"
+            class="row footer-columns"
+            data-collapse-footer-columns="true"
+            role="list"
+        >
+            <div class="col-md-3 offset-md-3 footer-column js-footer-column">
+                <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+                     id="collapseFooterPayment"
+                     data-bs-target="#collapseFooterPayment"
+                     aria-expanded="true"
+                     aria-controls="collapseFooterPayment"
+                     role="listitem">
+                    {{ 'footer.paymentHeadline'|trans|sw_sanitize }}
+                    <div class="footer-column-toggle">
+                        <span class="footer-plus-icon">
+                            {% sw_icon 'plus' style {
+                                ariaLabel: 'general.expand'|trans
+                            } %}
+                        </span>
+                        <span class="footer-minus-icon">
+                            {% sw_icon 'minus' style {
+                                ariaLabel: 'general.collapse'|trans
+                            } %}
+                        </span>
+                    </div>
+                </div>
+
+                <div id="collapseFooterPayment"
+                     class="footer-column-content collapse js-footer-column-content footer-contact"
+                     aria-labelledby="collapseFooterPayment"
+                     role="listitem">
+                    <div class="footer-column-content-inner">
+                        Payment here
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 footer-column js-footer-column">
+                <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+                     id="collapseFooterShipping"
+                     data-bs-target="#collapseFooterShipping"
+                     aria-expanded="true"
+                     aria-controls="collapseFooterShipping"
+                     role="listitem">
+                    {{ 'footer.shippingHeadline'|trans|sw_sanitize }}
+                    <div class="footer-column-toggle">
+                        <span class="footer-plus-icon">
+                            {% sw_icon 'plus' style {
+                                ariaLabel: 'general.expand'|trans
+                            } %}
+                        </span>
+                        <span class="footer-minus-icon">
+                            {% sw_icon 'minus' style {
+                                ariaLabel: 'general.collapse'|trans
+                            } %}
+                        </span>
+                    </div>
+                </div>
+
+                <div id="collapseFooterShipping"
+                     class="footer-column-content collapse js-footer-column-content footer-contact"
+                     aria-labelledby="collapseFooterPayment"
+                     role="listitem">
+                    <div class="footer-column-content-inner">
+                        Shipping here
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 footer-column js-footer-column">
+                <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+                     id="collapseFooterFollowingFacebook"
+                     data-bs-target="#collapseFooterFollowingFacebook"
+                     aria-expanded="true"
+                     aria-controls="collapseFooterFollowingFacebook"
+                     role="listitem">
+                    {{ 'footer.followingFacebook'|trans|sw_sanitize }}
+                    <div class="footer-column-toggle">
+                        <span class="footer-plus-icon">
+                            {% sw_icon 'plus' style {
+                                ariaLabel: 'general.expand'|trans
+                            } %}
+                        </span>
+                        <span class="footer-minus-icon">
+                            {% sw_icon 'minus' style {
+                                ariaLabel: 'general.collapse'|trans
+                            } %}
+                        </span>
+                    </div>
+                </div>
+
+                <div id="collapseFooterFollowingFacebook"
+                     class="footer-column-content collapse js-footer-column-content footer-contact"
+                     aria-labelledby="collapseFooterPayment"
+                     role="listitem">
+                    <div class="footer-column-content-inner">
+                        <iframe
+                            name="f0d15014d14bff87c"
+                            width="100%"
+                            height="1000px"
+                            data-testid="fb:page Facebook Social Plugin"
+                            title="fb:page Facebook Social Plugin"
+                            frameborder="0"
+                            allowtransparency="true"
+                            allowfullscreen="true"
+                            scrolling="no"
+                            allow="encrypted-media"
+                            src="https://www.facebook.com/v2.5/plugins/page.php?adapt_container_width=true&amp;app_id=726744260789964&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df9b78a0e0e061c007%26domain%3Dantique-watches.net%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fantique-watches.net%252Ff2a750f40a5fee36a%26relation%3Dparent.parent&amp;container_width=295&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fantique.watches.gmbh%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false&amp;width=295"
+                            style="border: none; visibility: visible; width: 295px; height: 125px;"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block layout_footer_bottom %}
+        <div class="footer-bottom">
+            {% block layout_footer_service_menu %}
+                <div class="container">
+                    {% block layout_footer_service_menu_content %}
+                        {% apply spaceless %}
+                            <ul class="footer-service-menu-list list-unstyled">
+                                {% for serviceMenuItem in page.header.serviceMenu %}
+                                    {% block layout_footer_service_menu_item %}
+                                        <li class="footer-service-menu-item">
+                                            <a class="footer-service-menu-link"
+                                               href="{{ category_url(serviceMenuItem) }}"
+                                               {% if category_linknewtab(serviceMenuItem) %}target="_blank"{% endif %}
+                                               title="{{ serviceMenuItem.translated.name }}">
+                                                {{ serviceMenuItem.translated.name }}
+                                            </a>
+                                        </li>
+                                    {% endblock %}
+                                {% endfor %}
+                            </ul>
+                        {% endapply %}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+
+            {% block layout_footer_vat %}
+                {% if showVatNotice or showVatNotice is not defined %}
+                    <div class="footer-vat">
+                        {% if context.taxState == 'gross' %}
+                            <p>
+                                {{ 'footer.includeVatText'|trans({
+                                    '%url%': path('frontend.cms.page', { id: config('core.basicInformation.shippingPaymentInfoPage') })
+                                })|raw }}
+                            </p>
+                        {% else %}
+                            <p>
+                                {{ 'footer.excludeVatText'|trans({
+                                    '%url%': path('frontend.cms.page', { id: config('core.basicInformation.shippingPaymentInfoPage') })
+                                })|raw }}
+                            </p>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endblock %}
+
+            {% block layout_footer_copyright %}
+                <div class="footer-copyright">
+                    {{ 'footer.copyrightInfo'|trans|sw_sanitize }}
+                </div>
+            {% endblock %}
+        </div>
+    {% endblock %}
+{% endblock %}

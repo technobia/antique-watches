@@ -1,0 +1,44 @@
+.footer {
+  &-bottom {
+    background: transparent;
+    padding: 20px 16px;
+  }
+
+  &-vat {
+    margin: 0;
+
+    p {
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    a {
+      font-size: 12px;
+    }
+  }
+
+  &-copyright {
+    font-size: 13px;
+  }
+
+  &-column-headline {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 28px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #caa02e;
+
+    @media (max-width: 768px) {
+      padding-top: 8px;
+      margin-top: 0;
+    }
+  }
+}
+
+
+#footerColumnsTwo {
+  border-top: 1px solid #dadae5;
+  border-bottom: 1px solid #dadae5;
+}
