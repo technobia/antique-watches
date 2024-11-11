@@ -1,0 +1,25 @@
+{% sw_extends '@Storefront/storefront/layout/header/logo.html.twig' %}
+
+{% block layout_header_logo_inner %}
+<div class="logo-main block-group" role="banner">
+	<div class="logo--shop block"> <a class="logo--link" href="{{ path('frontend.home.page') }}" title="{{ "
+			header.logoLink"|trans|striptags }}">
+			{% block layout_header_logo_image %}
+				<picture class="header-logo-picture">
+					{% block layout_header_logo_image_tablet %}
+						{{ parent() }} 
+					{% endblock %}
+
+					{% block layout_header_logo_image_mobile %}
+						{{ parent() }} 
+					{% endblock %}
+
+					{% block layout_header_logo_image_default %}
+						{{ parent() }} 
+					{% endblock %}
+				</picture>
+			{% endblock %}
+		</a> </div>
+</div>
+{% endblock %}
+

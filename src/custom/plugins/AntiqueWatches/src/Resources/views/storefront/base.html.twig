@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_head %}
+    {{ parent() }}
+    {# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"> #}
+{% endblock %}
+
+
+{% block base_header %}
+    <header class="header-main">
+        {% block base_header_inner %}
+            {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
+        {% endblock %}
+    </header>
+{% endblock %}

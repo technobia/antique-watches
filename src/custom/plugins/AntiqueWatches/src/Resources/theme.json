@@ -18,5 +18,8 @@
   "asset": [
     "@Storefront",
     "app/storefront/src/assets"
-  ]
+  ],
+  "iconSets": {
+    "custom": "app/storefront/src/assets/icon-pack/custom-icons"
+  }
 }
