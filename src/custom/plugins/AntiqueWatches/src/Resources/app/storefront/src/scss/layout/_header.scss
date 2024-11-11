@@ -1,0 +1,70 @@
+.header-main {
+	padding-bottom: 0.625rem;
+	background: #fff;
+	border-bottom: 1px solid #caa02e;
+
+	.top-bar {
+		display: none;
+
+		@include media-breakpoint-up(md) {
+			display: block;
+		}
+
+		.logo-main {
+			padding: 0.625rem 0.625rem 3.75rem 0.625rem;
+
+			.logo--link {
+				height: 8.1875rem;
+				display: inline-block;
+				max-width: 100%;
+			}
+
+			.logo--shop {
+				height: 2.8125rem;
+				width: 50%;
+			}
+
+			.logo--supportinfo {
+				display: none;
+			}
+		}
+
+		.header--navigation {
+			position: relative;
+		}
+	}
+
+	.language-selector {
+		padding: 0.25rem 0;
+		display: block;
+
+		&--navigation {
+			// width: auto;
+			// float: right;
+			// padding: 0 0.9375rem;
+			text-align: right;
+		}
+
+		&--list {
+			list-style: none;
+		}
+
+		&--entry {
+			// float: left;
+
+			a {
+				color: #000;
+				font-size: 0.875rem;
+
+				&:hover {
+					color: #caa02e;
+				}
+			}
+
+			img {
+				display: inline;
+				height: 12px;
+			}
+		}
+	}
+}

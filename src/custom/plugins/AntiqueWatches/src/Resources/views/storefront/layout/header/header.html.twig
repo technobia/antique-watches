@@ -1,0 +1,73 @@
+{% sw_extends '@Storefront/storefront/layout/header/header.html.twig' %}
+
+{% block layout_header %}
+
+    {% block language_selector %}
+        {% sw_include '@Storefront/storefront/layout/header/actions/language-selector.html.twig' %} 
+    {% endblock %}
+
+
+    {% block layout_top_bar %}
+        {% sw_include '@Storefront/storefront/layout/header/actions/layout-top-bar.html.twig' %} 
+    {% endblock %}
+
+    {% block layout_header_navigation %}
+        {# {{ parent() }} #}
+
+
+        {# TODO: replace the following DOM with real data #}
+
+        <div class="container header--navigation">
+            <div class="logo-main block-group" role="banner">
+                <div class="logo--shop block"> <a class="logo--link" href="https://antique-watches.net/"
+                        title="Antique Watches GmbH - Switch to homepage">
+                        <picture>
+                            <source srcset="https://antique-watches.net/media/image/cf/36/0e/logo-ab.jpg"
+                                media="(min-width: 78.75em)">
+                            <source srcset="https://antique-watches.net/media/image/cf/36/0e/logo-ab.jpg"
+                                media="(min-width: 64em)">
+                            <source srcset="https://antique-watches.net/media/image/af/6f/09/antique-logo-ohne-uhr-paypal.jpg"
+                                media="(min-width: 48em)"> <img
+                                srcset="https://antique-watches.net/media/image/af/6f/09/antique-logo-ohne-uhr-paypal.jpg"
+                                alt="Antique Watches GmbH - Switch to homepage">
+                        </picture>
+                    </a> </div>
+            </div>
+            <nav class="shop--navigation block-group">
+                <ul class="navigation--list block-group" role="menubar">
+                    <li class="navigation--entry entry--menu-left" role="menuitem"> <a
+                            class="entry--link entry--trigger btn is--icon-left" href="#offcanvas--left" data-offcanvas="true"
+                            data-offcanvasselector=".sidebar-main"> <i class="icon--menu"></i> Menu </a> </li>
+                    <li class="navigation--entry entry--search" role="menuitem" data-search="true" aria-haspopup="true"> <a
+                            class="btn entry--link entry--trigger" href="#show-hide--search" title="Show / close search"> <i
+                                class="icon--search"></i> <span class="search--display">Search</span> </a>
+                        <form action="/search" method="get" class="main-search--form"> <input type="search" name="sSearch"
+                                aria-label="Search..." class="main-search--field" autocomplete="off" autocapitalize="off"
+                                placeholder="Search..." maxlength="30"> <button type="submit" class="main-search--button"
+                                aria-label="Search"> <i class="icon--search"></i> <span class="main-search--text">Search</span>
+                            </button>
+                            <div class="form--ajax-loader">&nbsp;</div>
+                        </form>
+                        <div class="main-search--results"></div>
+                    </li>
+                    <li class="navigation--entry entry--notepad" role="menuitem"> <a href="https://antique-watches.net/note"
+                            title="Wish list" class="btn"> <i class="icon--heart"></i> </a> </li>
+                    <li class="navigation--entry entry--account" role="menuitem"> <a href="https://antique-watches.net/account"
+                            title="My account" class="btn is--icon-left entry--link account--link"> <i class="fa fa-user"
+                                aria-hidden="true"></i> <span class="account--display"></span> </a> </li>
+                    <li class="navigation--entry entry--cart" role="menuitem"> <a class="btn is--icon-left cart--link"
+                            href="https://antique-watches.net/checkout/cart" title="Shopping cart"> <span class="cart--display">
+                                Shopping cart </span> <span
+                                class="badge is--primary is--minimal cart--quantity is--hidden">0</span> <i
+                                class="icon--basket"></i> <span class="cart--amount"> 0.00€ </span> </a>
+                        <div class="ajax-loader">&nbsp;</div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="container--ajax-cart off-canvas is--right is--active" data-collapse-cart="true"
+                data-displaymode="offcanvas"></div>
+        </div>
+
+        
+    {% endblock %}
+{% endblock %}
