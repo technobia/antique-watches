@@ -1,10 +1,11 @@
 /* Theme */
 @import "variables/theme";
-@import "antique/main";
+// @import "antique/main";
 
 
 /* Layout */
-// @import "layout/header";
+@import "layout/common";
+@import "layout/header";
 @import "layout/footer";
 
 @font-face {
@@ -16,4 +17,13 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Muli', sans-serif;
+  font-weight: 400;
+  color: #000;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
