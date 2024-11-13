@@ -1,0 +1,21 @@
+.cms-breadcrumb {
+  border-bottom: 1px solid #dadae5;
+}
+
+.breadcrumb {
+  padding: 0 40px;
+  margin: 0;
+
+  li {
+    line-height: 43px;
+  }
+
+  &-placeholder {
+    line-height: 43px;
+  }
+
+  a.is-active {
+    color: $antique-text-primary;
+    font-weight: normal;
+  }
+}

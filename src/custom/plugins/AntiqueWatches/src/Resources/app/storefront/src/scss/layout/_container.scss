@@ -1,0 +1,13 @@
+.container-main {
+  box-shadow: 0 0 4px 1px #dadae5;
+  margin: 1.25rem auto 2.8125rem;
+  max-width: 78.75rem;
+  background: #fff;
+  width: 100%;
+  padding: 0;
+
+  @media (max-width: $breakpoint-medium) {
+    box-shadow: unset;
+    margin: 0;
+  }
+}
