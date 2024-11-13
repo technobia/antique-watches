@@ -1,4 +1,10 @@
 .footer {
+  &-main {
+    @media (max-width: $breakpoint-medium) {
+      border-top: 1px solid #dadae5;
+    }
+  }
+
   &-bottom {
     background: transparent;
     padding: 20px 16px;
@@ -21,6 +27,19 @@
     font-size: 13px;
   }
 
+  &-column {
+    @media (max-width: $breakpoint-medium) {
+      border-bottom: 1px solid #dadae5;
+    }
+  }
+
+  &-column-toggle {
+    svg {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
   &-column-headline {
     padding-top: 0;
     padding-bottom: 0;
@@ -30,7 +49,7 @@
     font-weight: 700;
     color: #caa02e;
 
-    @media (max-width: 768px) {
+    @media (max-width: $breakpoint-medium) {
       padding-top: 8px;
       margin-top: 0;
     }
@@ -46,4 +65,8 @@
 #footerColumnsTwo {
   border-top: 1px solid #dadae5;
   border-bottom: 1px solid #dadae5;
+
+  @media (max-width: $breakpoint-medium) {
+    border: 0;
+  }
 }
