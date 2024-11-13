@@ -35,8 +35,13 @@
       margin-top: 0;
     }
   }
-}
 
+  &-column-content-inner {
+    img {
+      display: inline-block;
+    }
+  }
+}
 
 #footerColumnsTwo {
   border-top: 1px solid #dadae5;
