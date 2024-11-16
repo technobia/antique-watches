@@ -173,6 +173,7 @@
 		vertical-align: middle;
 		background: none;
 		border: none;
+		display: inline-flex;
 	}
 
 	.navigation--list {
@@ -196,6 +197,19 @@
 			width: auto;
 			display: inline-block;
 		}
+
+		.main-search--form {
+			@include media-breakpoint-down(sm) {
+				top: 3.125rem;
+				background: #efeff4;
+				left: 0;
+				display: block;
+				position: absolute;
+				padding: .625rem .625rem .625rem .625rem;
+				width: 100%;
+				display: none;
+			}
+		}
 	}
 
 	.entry--search {
@@ -207,6 +221,26 @@
 
 			.entry--trigger {
 				display: none;
+			}
+		}
+
+		.entry--trigger {
+			.icon {
+				color: #000;
+			}
+		}
+
+		&.is--active {
+			.entry--trigger {
+				.icon {
+					color: $antique-text-primary
+				}
+			}
+
+			.main-search--form {
+				@include media-breakpoint-down(sm) {
+					display: block;
+				}
 			}
 		}
 	}

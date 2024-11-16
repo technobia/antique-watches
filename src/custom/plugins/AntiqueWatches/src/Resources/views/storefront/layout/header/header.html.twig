@@ -33,10 +33,11 @@
 
                         <li class="navigation--entry entry--search" role="menuitem" data-search="true" aria-haspopup="true"> 
                             <a
-                                class="btn entry--link entry--trigger" 
+                                class="btn entry--link entry--trigger"  
                                 href="#show-hide--search" 
-                                title="Show / close search"> 
-                                    <i class="icon--search"></i> 
+                                title="Show / close search"
+                                data-mobile-search-trigger> 
+                                {% sw_icon 'search' style { 'pack': 'custom' } %}
                             </a>
                             
                             {# search #}
