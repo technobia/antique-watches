@@ -2,9 +2,7 @@
     {% set showCounter = showCounter ?? true %}
 
     {% if showCounter %}
-        <span class="header-wishlist-icon">
-            {% sw_icon 'heart' style { 'pack': 'custom' } %}
-        </span>
+        {% sw_icon 'heart' style { 'pack': 'custom' } %}
     {% endif %}
 
     {% set wishlistStorageOptions = {
