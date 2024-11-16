@@ -186,6 +186,8 @@
 
 	.navigation--entry {
 		margin-right: 0;
+		width: max-content;
+		display: inline-block;
 
 		@include media-breakpoint-up(md) {
 			border-radius: 3px;
@@ -193,6 +195,19 @@
 			border: none;
 			width: auto;
 			display: inline-block;
+		}
+	}
+
+	.entry--search {
+		@include media-breakpoint-up(sm) {
+			display: inline-block;
+			position: absolute;
+			left: 26%;
+			width: 40%;
+
+			.entry--trigger {
+				display: none;
+			}
 		}
 	}
 
@@ -241,17 +256,14 @@
 		background: none;
 		border: none;
 		vertical-align: middle;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: .75rem;
 	}
 }
 
 .main-search--form {
-	padding: .625rem;
-	width: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: 3000;
-
 	&.shop--navigation {
 		display: none;
 
@@ -279,7 +291,7 @@
 
 
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(sm) {
 			background: none;
 			border-bottom: 2px solid #e8ce70 !important;
 			border: none;
@@ -303,11 +315,18 @@
 		color: #000;
 		outline: none;
 
+		.loader {
+			width: 20px;
+			height: 20px;
+			color: #4f4f71;
+		}
+
 		.icon-custom-search {
 			color: #000;
 		}
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(sm) {
+			top: 0;
 			bottom: 0;
 			right: 0;
 			height: 2.5rem;
