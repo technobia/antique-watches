@@ -278,6 +278,10 @@
 
 	.entry--cart {
 		position: relative;
+
+		.header-cart-icon {
+			display: flex;
+		}
 	}
 
 	.entry--menu-left .btn {
