@@ -285,7 +285,7 @@
 	}
 
 	.entry--menu-left .btn {
-		padding-left: 0;
+		padding-left: 10px;
 		line-height: 2.1875rem;
 		font-size: 1.0625rem;
 		height: 2.5rem;
@@ -517,5 +517,41 @@
 
 	.navigation-flyout-categories.is-level-0>.navigation-flyout-col {
 		margin: 0;
+	}
+}
+
+.navigation-offcanvas {
+	background: #f5f5f8;
+	color: #000;
+
+	.offcanvas-close {
+		padding: .125rem .625rem .125rem .625rem;
+		line-height: 2.375rem;
+		background-color: #000;
+		background-image: linear-gradient(to bottom, #000 0%, #000 100%);
+		border: none;
+		color: #fff;
+
+		.icon {
+			color: currentColor;
+		}
+	}
+
+	.navigation-offcanvas-headline {
+		&:first-child {
+			padding-top: 60px;
+		}
+	}
+
+	.navigation-offcanvas-link {
+		color: #000;
+
+		.icon {
+			color: currentColor;
+		}
+
+		&:hover {
+			color: $antique-text-primary;
+		}
 	}
 }
