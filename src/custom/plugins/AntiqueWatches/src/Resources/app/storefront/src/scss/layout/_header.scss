@@ -444,11 +444,90 @@
 .nav-main {
 	border-bottom: 1px solid #e9ce69;
 
+	.main-navigation {
+		@include media-breakpoint-up(md) {
+			display: block;
+		}
+
+		.container {
+			padding: 0;
+		}
+	}
+
+	.desktop-navigation {
+		position: relative;
+		padding: 0rem .625rem 0rem .625rem;
+
+		.scroll-left,
+		.scroll-right {
+			position: absolute;
+			border-radius: 3px;
+			background-clip: padding-box;
+			border: 1px solid #dadae5;
+			width: 1.375rem;
+			height: 2.3125rem;
+			background-color: #fff;
+			background-image: linear-gradient(to bottom, #fff 0%, #f8f8fa 100%);
+			border: 1px solid #dadae5;
+			position: absolute;
+			text-align: center;
+			color: #000;
+			cursor: pointer;
+			top: 0;
+
+			&::after {
+				content: "";
+				vertical-align: middle;
+				background-color: currentcolor;
+				display: inline-block;
+				mask-position: center;
+				mask-repeat: no-repeat;
+				mask-size: contain;
+				width: 1.375rem;
+				height: 2.3125rem;
+			}
+
+			.icon>svg {
+				top: 0;
+			}
+		}
+
+		.scroll-left {
+			left: 0;
+
+			&::after {
+				mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Cpath d='M75.48 89.809c-.2 1.099-.5 2.098-1.1 3.096-1.6 2.398-4.6 3.596-7.4 2.897-1.1-.3-2-.799-2.9-1.498-14.4-13.485-28.4-27.37-41.8-41.754-.4-.499-.8-.998-1-1.598a6.99 6.99 0 0 1-.2-5.494c.3-.699.7-1.398 1.2-1.997 13.5-14.384 27.4-28.369 41.8-41.754.9-.7 1.8-1.199 2.9-1.498.9-.2 1.9-.3 2.8-.1 3.7.6 6.2 4.195 5.6 7.891-.2 1.399-.9 2.597-1.9 3.696l-36.2 36.36c12.2 12.186 24.8 23.973 36.6 36.559.3.4.3.4.6.699.8 1.498 1.1 2.897 1 4.495'/%3E%3C/svg%3E");
+			}
+		}
+
+		.scroll-right {
+			right: 0;
+
+			&::after {
+				mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Cpath d='M20.63 89.809c.2 1.099.5 2.098 1.1 3.096 1.6 2.398 4.6 3.596 7.4 2.897 1.1-.3 2-.799 2.9-1.498 14.4-13.485 28.4-27.37 41.8-41.754.4-.499.8-.998 1-1.598.8-1.698.9-3.696.2-5.494-.3-.699-.7-1.398-1.2-1.997-13.5-14.384-27.4-28.369-41.8-41.754-.9-.7-1.8-1.199-2.9-1.498-.9-.2-1.9-.3-2.8-.1-3.7.6-6.2 4.195-5.6 7.891.2 1.399.9 2.597 1.9 3.696l36.2 36.36c-12.2 12.186-24.8 23.973-36.6 36.559-.3.4-.3.4-.6.699-.8 1.498-1.1 2.897-1 4.495'/%3E%3C/svg%3E");
+			}
+		}
+	}
+
+	.main-navigation-menu {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-y: hidden;
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+
 	.main-navigation-link {
 		color: #000;
 
 		.main-navigation-link-text {
 			border-bottom: none;
+			width: max-content;
+
+			@include media-breakpoint-up(md) {
+				padding-bottom: 0;
+				line-height: normal;
+			}
 		}
 
 		&:hover,
