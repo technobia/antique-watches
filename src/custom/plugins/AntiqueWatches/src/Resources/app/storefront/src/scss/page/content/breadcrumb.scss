@@ -14,8 +14,10 @@
     line-height: 43px;
   }
 
-  a.is-active {
-    color: $antique-text-primary;
-    font-weight: normal;
+  a {
+    &:hover, &.is-active {
+      color: $antique-text-primary;
+      font-weight: normal;
+    }
   }
 }

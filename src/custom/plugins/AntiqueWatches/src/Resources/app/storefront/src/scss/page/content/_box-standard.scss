@@ -1,0 +1,45 @@
+.product-box.box-standard {
+  border-color: #dadae5;
+  border-radius: 3px;
+}
+
+.card-body {
+  display: flex;
+  padding: 20px 10px;
+
+  .product-image-wrapper {
+    width: 168px;
+    flex-basis: 168px;
+    flex-grow: unset;
+    height: auto;
+    margin: 0;
+  }
+
+  .product-image {
+    max-width: 168px;
+  }
+
+  .product-image-link {
+    align-items: flex-start;
+
+    img {
+      object-position: top;
+    }
+  }
+
+  .product-info {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .product-name {
+      font-size: 16px;
+    }
+
+    .product-price-info {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}
