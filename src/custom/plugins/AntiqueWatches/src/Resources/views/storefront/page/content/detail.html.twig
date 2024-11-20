@@ -2,7 +2,7 @@
 
 {# @var landingPage \Shopware\Core\Content\LandingPage\LandingPageEntity #}
 {% block page_content_sections_inner %}
-    <div class="cms-sections">
+    <div class="cms-sections pdp">
         {% for section in cmsPage.sections %}
             {% set sectionBgColor = section.backgroundColor %}
             {% set sectionBgImg = section.backgroundMedia|sw_encode_media_url %}

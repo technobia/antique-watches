@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget-form.html.twig' %}
+
+{% block buy_widget_buy_quantity_input_group %}
+    <div class="input-group product-detail-quantity-group quantity-selector-group" data-quantity-selector="true">
+        <div class="select-field"> 
+            <select name="lineItems[{{ product.id }}][quantity]"
+                    class="quantity--select">
+                {% set maxPurchase = min(product.calculatedMaxPurchase, 15) %}
+                {% for i in 1..maxPurchase %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+{% endblock %}

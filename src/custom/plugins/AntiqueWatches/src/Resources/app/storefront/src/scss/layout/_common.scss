@@ -486,3 +486,18 @@ img {
 .btn.is--center {
 	text-align: center
 }
+
+.btn-primary {
+	padding: .125rem .75rem .125rem .75rem;
+	line-height: 2.125rem;
+	background-color: #d9ae38;
+	background-image: linear-gradient(to bottom, #d9ae38 0%, #caa02e 100%);
+	border: 0 none;
+	color: #fff;
+
+	&:hover {
+		border-color: #caa02e;
+		background: #caa02e;
+		color: #fff;
+	}
+}
