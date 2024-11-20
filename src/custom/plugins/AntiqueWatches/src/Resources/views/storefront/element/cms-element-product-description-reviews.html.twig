@@ -1,0 +1,40 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-product-description-reviews.html.twig' %}
+
+{% block element_product_description_reviews_tabs_navigation_description %}
+    {{ parent() }}
+
+    <li class="nav-item">
+        <a
+            class="nav-link product-detail-tab-navigation-link"
+            id="info-about-function-tab"
+            data-bs-toggle="tab"
+            data-off-canvas-tabs="true"
+            href="#info-about-function-tab-panel"
+            role="tab"
+            aria-controls="info-about-function-tab-panel"
+            aria-selected="false"
+        >
+            <span>{{ "detail.tabs.infoAboutFunction"|trans|sw_sanitize }}</span>
+            <span class="product-detail-tab-navigation-icon">
+                {% sw_icon 'arrow-medium-right' style {'pack':'solid'} %}
+            </span>
+        </a>
+    </li>
+{% endblock %}
+
+{% block element_product_description_reviews_tabs_navigation_review %}
+{% endblock %}
+
+{% block element_product_description_reviews_tabs_content_description %}
+    {{parent()}}
+
+    <div class="tab-pane fade show {% if (ratingSuccess != 1) and (ratingSuccess != -1) %}active{% endif %}"
+            id="info-about-function-tab-panel"
+            role="tabpanel"
+            aria-labelledby="description-tab">
+        {{page.product.customFields.custom_product_more_info_about_function | raw }}
+    </div>
+{% endblock %}
+
+{% block element_product_description_reviews_tabs_content_review %}
+{% endblock %}
