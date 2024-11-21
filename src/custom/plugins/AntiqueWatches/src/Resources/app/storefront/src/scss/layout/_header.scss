@@ -393,6 +393,15 @@
 .header-cart-total {
 	color: $antique-text-primary;
 	font-size: .875rem;
+	margin-left: 20px;
+}
+
+.header-cart-badge {
+	@include media-breakpoint-up(sm) {
+		display: block;
+		right: unset !important;
+		left: 20px;
+	}
 }
 
 .header-main .search-suggest-container {
