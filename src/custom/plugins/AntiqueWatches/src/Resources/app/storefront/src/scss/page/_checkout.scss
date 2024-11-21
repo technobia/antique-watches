@@ -1,0 +1,48 @@
+.is-act-checkoutregisterpage .checkout {
+  padding-top: 20px;
+}
+
+.checkout {
+  @include media-breakpoint-up(md) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .address-main-header {
+    margin-top: 0;
+    font-size: 16px;
+  }
+
+  .checkout-aside-summary-header {
+    font-size: 16px;
+  }
+
+  .checkout-aside-product-header {
+    font-size: 16px;
+  }
+
+  .register-card {
+    .card-body {
+      flex-direction: column;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+    }
+
+    .form-control {
+      width: 100%;
+    }
+
+    .custom-control-label, .form-label {
+      font-size: 14px;
+    }
+
+    .form-group, .form-check {
+      margin-bottom: 10px;
+    }
+  }
+
+  .checkout-aside-summary {
+    font-size: 14px;
+  }
+}
