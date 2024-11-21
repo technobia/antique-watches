@@ -2,14 +2,14 @@
     searchWidgetMinChars: page.header.activeLanguage.productSearchConfig.minSearchLength ?: 3
 } %}
 
-<form action="{{ path('frontend.search.page') }}" 
-    method="get" 
+<form action="{{ path('frontend.search.page') }}"
+    method="get"
     data-search-widget="true"
     {# ludtwig-ignore html-string-quotation #}
     data-search-widget-options='{{ searchWidgetOptions|json_encode }}'
     data-url="{{ path('frontend.search.suggest') }}?search="
     class="main-search--form">
-  
+
     <input type="search"
         name="search"
         class="main-search--field"

@@ -9,22 +9,6 @@
 		}
 	}
 
-	>.cms-section-default {
-		padding: 0rem .625rem 1rem .625rem;
-
-		@include media-breakpoint-up(md) {
-			padding: 0rem 1.875rem 1rem 1.875rem;
-		}
-
-		@include media-breakpoint-up(lg) {
-			padding: 0rem 3.125rem 3.125rem 3.125rem
-		}
-
-		.cms-section-default {
-			padding: 0;
-		}
-	}
-
 	.cms-block-product-heading {
 		.product-detail-name {
 			padding: .625rem 0rem .625rem 0rem;

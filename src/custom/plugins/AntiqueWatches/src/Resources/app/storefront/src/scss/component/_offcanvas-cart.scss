@@ -1,0 +1,22 @@
+.offcanvas-cart {
+  .alert {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &-content {
+      font-size: 14px;
+    }
+  }
+
+  &-items {
+    margin-top: 0;
+  }
+}
+
+.offcanvas-cart-actions {
+  margin-bottom: 20px;
+
+  .d-grid:not(:first-child) {
+    margin-top: 10px;
+  }
+}
