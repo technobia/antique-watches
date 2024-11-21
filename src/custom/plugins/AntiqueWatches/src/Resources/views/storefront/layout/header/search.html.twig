@@ -5,7 +5,6 @@
 <form action="{{ path('frontend.search.page') }}"
     method="get"
     data-search-widget="true"
-    {# ludtwig-ignore html-string-quotation #}
     data-search-widget-options='{{ searchWidgetOptions|json_encode }}'
     data-url="{{ path('frontend.search.suggest') }}?search="
     class="main-search--form">
@@ -20,7 +19,7 @@
         value="{{ page.searchTerm }}"
     >
 
-    <button type="submit" class="main-search--button" aria-label="{{ "header.searchButton"|trans|striptags }}">
+    <button type="submit" class="main-search--button  js-search-close-btn" aria-label="{{ "header.searchButton"|trans|striptags }}">
         {% sw_icon 'search' style { 'pack': 'custom' } %}
     </button>
 </form>
