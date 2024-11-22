@@ -35,6 +35,14 @@
 		@include media-breakpoint-up(lg) {
 			margin-top: 2.8125rem;
 		}
+
+		img {
+			display: block;
+			max-width: 100%;
+			max-height: 100%;
+			height: auto;
+			margin-left: auto;
+		}
 	}
 
 	.select-field {
@@ -128,5 +136,54 @@
 
 	.gallery-slider-thumbnails-col.is-left .gallery-slider-thumbnails-item {
 		margin-bottom: 15px !important;
+	}
+
+	.product-detail-tabs {
+		padding: 1rem 0;
+
+		.product-detail-tabs-content {
+			border: 1px solid #dadae5;
+
+			display: none;
+
+			@include media-breakpoint-up(md) {
+				display: flex;
+			}
+		}
+
+		.nav-tabs .nav-link {
+			padding: .625rem .9375rem .625rem .9375rem;
+			margin: 0rem .3125rem 0rem 0rem;
+			line-height: 1.5rem;
+			font-size: .875rem;
+			background-color: #fff;
+			background-image: linear-gradient(to bottom, #fff 0%, #f8f8fa 100%);
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+			background-clip: padding-box;
+			top: .0625rem;
+			position: relative;
+			font-weight: 700;
+			text-align: center;
+			color: #000;
+			border: 1px solid #dadae5;
+			white-space: nowrap;
+
+			&:hover {
+				color: $antique-text-primary;
+			}
+
+			&.active {
+				color: #000;
+				border-bottom-color: #fff;
+				background: #fff;
+
+				&:hover {
+					color: #000;
+				}
+			}
+		}
 	}
 }
