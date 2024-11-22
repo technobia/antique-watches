@@ -1,42 +1,26 @@
 <div class="top-bar">
-
-    {# TODO: get data from footer service navigation #}
     <div class="container block-group">
         <nav class="top-bar--navigation block" role="menubar">
             <div class="navigation--entry entry--compare is--hidden" role="menuitem" aria-haspopup="true"
                 data-drop-down-menu="true"> </div>
             <div class="navigation--entry entry--service has--drop-down" role="menuitem" aria-haspopup="true"
                 data-drop-down-menu="true">
-                    {# <i class="icon--question"></i>  #}
                     {% sw_icon 'question' style { 'pack': 'custom' } %}
-                    
                     Service/Help 
                 <ul class="service--list is--rounded" role="menu">
-                    <li class="service--entry" role="menuitem"> <a class="service--link"
-                            href="https://antique-watches.net/cancellation-terms" title="Cancellation terms">
-                            Cancellation terms </a>
-                    </li>
-                    <li class="service--entry" role="menuitem"> <a class="service--link"
-                            href="https://antique-watches.net/ticket/index/sFid/18" title="Contact"> Contact </a> </li>
-                    <li class="service--entry" role="menuitem"> <a class="service--link"
-                            href="https://antique-watches.net/general-terms-and-conditions"
-                            title="General Terms and Conditions">
-                            General Terms and Conditions </a> </li>
-                    <li class="service--entry" role="menuitem"> <a class="service--link"
-                            href="https://antique-watches.net/payment-and-dispatch" title="Payment and Dispatch">
-                            Payment and Dispatch
-                        </a> </li>
-                    <li class="service--entry" role="menuitem"> <a class="service--link"
-                            href="https://antique-watches.net/privacy" title="Privacy">
-                            Privacy </a> </li>
-                    <li class="service--entry" role="menuitem"> <a class="service--link"
-                            href="https://antique-watches.net/what-we-do" title="What we do"> What we do </a> </li>
-                    <li class="service--entry" role="menuitem"> <a class="service--link"
-                            href="https://antique-watches.net/about-us" title="About us">
-                            About us </a> </li>
-                    <li class="service--entry" role="menuitem"> <a class="service--link"
-                            href="https://antique-watches.net/ticket/index/sFid/20" title="Return" target="_self">
-                            Return </a> </li>
+
+                    {% for serviceMenuItem in page.header.serviceMenu %}
+                        {% block layout_footer_service_menu_item %}
+                            <li class="service--entry" role="menuitem"> 
+                                <a class="service--link"
+                                    href="{{ category_url(serviceMenuItem) }}"
+                                    {% if category_linknewtab(serviceMenuItem) %}target="_blank"{% endif %}
+                                    title="{{ serviceMenuItem.translated.name }}">
+                                    {{ serviceMenuItem.translated.name }}
+                                </a>
+                            </li>
+                        {% endblock %}
+                    {% endfor %}
                 </ul>
 
                 {% sw_icon 'arrow-down' style { 'pack': 'custom' } %}
