@@ -31,10 +31,6 @@
   font-weight: normal;
 }
 
-.is-offcanvas .line-item-unit-price.is-shown {
-  justify-content: flex-start;
-}
-
 .line-item-total-price {
   justify-content: flex-start;
 
@@ -51,5 +47,36 @@
     top: 0;
     width: 12px;
     height: 12px;
+  }
+}
+
+.is-offcanvas {
+  .line-item-row {
+    position: relative;
+  }
+
+  .line-item-unit-price.is-shown {
+    justify-content: flex-start;
+  }
+
+  .line-item-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+
+    .btn {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .line-item-info {
+    .line-item-details {
+      margin-top: 5px;
+    }
   }
 }
