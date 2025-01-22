@@ -1,5 +1,6 @@
 {% block component_product_box_price_info %}
     {% set cheapest = product.calculatedCheapestPrice %}
+    {% set stock = product.stock %}
 
     {% set real = product.calculatedPrice %}
     {% if product.calculatedPrices.count > 0 %}
@@ -18,6 +19,16 @@
         {% set hasDifferentPrice = totalVariants|filter(variant => variant.default != null)|length > 0 %}
     {% endif %}
 
+    <div class="product-delivery">
+        {% if stock === 0 %}
+            <span class="product-delivery--item not-available">{{ 'shipping.soldOut'|trans }}</span>
+        {% elseif product.deliveryTime.name %}
+            <span class="product-delivery--item available">{{ 'shipping.available'|trans }} {{ product.deliveryTime.name }}</span>
+        {% elseif product.shippingFree %}
+            <span class="product-delivery--item available">{{ 'shipping.freeShipping'|trans }}</span>
+        {% endif %}
+    </div>
+
     <div class="product-price-info">
         {% block component_product_box_price %}
             <div class="product-price-wrapper">
@@ -30,7 +41,7 @@
                 {% endif %}
 
                 <span class="product-price{% if isListPrice and not displayFrom and not displayFromVariants %} with-list-price{% endif %}">
-                    {{ price.unitPrice|currency }}{{ 'general.star'|trans|sw_sanitize }}
+                    {{ price.unitPrice|currency }}
 
                     {% if isListPrice and not displayFrom and not displayFromVariants %}
                         {% set afterListPriceSnippetExists = 'listing.afterListPrice'|trans|length > 0 %}

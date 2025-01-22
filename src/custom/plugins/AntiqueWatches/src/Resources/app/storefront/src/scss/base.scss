@@ -18,6 +18,7 @@
 @import "component/offcanvas";
 @import "component/offcanvas-cart";
 @import "component/line-item-row";
+@import "component/product";
 
 
 /* Custom */
@@ -34,7 +35,7 @@
 
 body {
   font-size: 1rem;
-  font-family: 'Muli', sans-serif;
+  font-family: 'Muli';
   font-weight: 400;
   color: #000;
   text-rendering: optimizeLegibility;

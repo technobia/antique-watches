@@ -1,0 +1,32 @@
+.product-delivery {
+  &--item {
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 100vh;
+      background: black;
+      margin-right: 10px;
+    }
+
+    &.not-available {
+      color: #e74c3c;
+
+      &:before {
+        background: #e74c3c;
+      }
+    }
+
+    &.available {
+      color: #2ecc71;
+
+      &:before {
+        background: #2ecc71;
+      }
+    }
+  }
+}

@@ -2,5 +2,8 @@
   "footer.paymentHeadline": "Payment methods",
   "footer.shippingHeadline": "We're shipping with",
   "footer.followingFacebook": "Following us in Facebook",
-  "detail.tabs.infoAboutFunction": "Info about function"
+  "detail.tabs.infoAboutFunction": "Info about function",
+  "shipping.soldOut": "Ausverkauft",
+  "shipping.available": "Versandbereit. Lieferzeit",
+  "shipping.freeShipping": "Kostenloser Versand"
 }
