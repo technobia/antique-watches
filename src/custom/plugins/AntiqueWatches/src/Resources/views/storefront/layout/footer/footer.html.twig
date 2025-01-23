@@ -116,6 +116,47 @@
                         {% endblock %}
                     {% endfor %}
                 {% endblock %}
+
+                <div class="col-md-3 footer-column js-footer-column">
+                    <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+                         id="collapseFooterFollowingFacebook"
+                         data-bs-target="#collapseFooterFollowingFacebook"
+                         aria-expanded="true"
+                         aria-controls="collapseFooterFollowingFacebook"
+                         role="listitem">
+                        {{ 'footer.followingFacebook'|trans|sw_sanitize }}
+                        <div class="footer-column-toggle">
+                        <span class="footer-plus-icon">
+                            {% sw_icon 'plus' style { pack: 'custom' } %}
+                        </span>
+                            <span class="footer-minus-icon">
+                            {% sw_icon 'minus' style { pack: 'custom' } %}
+                        </span>
+                        </div>
+                    </div>
+
+                    <div id="collapseFooterFollowingFacebook"
+                         class="footer-column-content collapse js-footer-column-content footer-contact"
+                         aria-labelledby="collapseFooterPayment"
+                         role="listitem">
+                        <div class="footer-column-content-inner">
+                            <iframe
+                                    name="f0d15014d14bff87c"
+                                    width="100%"
+                                    height="1000px"
+                                    data-testid="fb:page Facebook Social Plugin"
+                                    title="fb:page Facebook Social Plugin"
+                                    frameborder="0"
+                                    allowtransparency="true"
+                                    allowfullscreen="true"
+                                    scrolling="no"
+                                    allow="encrypted-media"
+                                    src="https://www.facebook.com/v2.5/plugins/page.php?adapt_container_width=true&amp;app_id=726744260789964&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df9b78a0e0e061c007%26domain%3Dantique-watches.net%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fantique-watches.net%252Ff2a750f40a5fee36a%26relation%3Dparent.parent&amp;container_width=295&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fantique.watches.gmbh%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false&amp;width=295"
+                                    style="border: none; visibility: visible; width: 100%; height: 125px;"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         {% endblock %}
 
@@ -184,47 +225,6 @@
                         <img src="{{ asset('bundles/antiquewatches/assets/images/dpd.png', 'asset') }}" />
                         <img src="{{ asset('bundles/antiquewatches/assets/images/post-germany.png', 'asset') }}" />
                         <img src="{{ asset('bundles/antiquewatches/assets/images/ups.png', 'asset') }}" />
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 footer-column js-footer-column">
-                <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
-                     id="collapseFooterFollowingFacebook"
-                     data-bs-target="#collapseFooterFollowingFacebook"
-                     aria-expanded="true"
-                     aria-controls="collapseFooterFollowingFacebook"
-                     role="listitem">
-                    {{ 'footer.followingFacebook'|trans|sw_sanitize }}
-                    <div class="footer-column-toggle">
-                        <span class="footer-plus-icon">
-                            {% sw_icon 'plus' style { pack: 'custom' } %}
-                        </span>
-                        <span class="footer-minus-icon">
-                            {% sw_icon 'minus' style { pack: 'custom' } %}
-                        </span>
-                    </div>
-                </div>
-
-                <div id="collapseFooterFollowingFacebook"
-                     class="footer-column-content collapse js-footer-column-content footer-contact"
-                     aria-labelledby="collapseFooterPayment"
-                     role="listitem">
-                    <div class="footer-column-content-inner">
-                        <iframe
-                            name="f0d15014d14bff87c"
-                            width="100%"
-                            height="1000px"
-                            data-testid="fb:page Facebook Social Plugin"
-                            title="fb:page Facebook Social Plugin"
-                            frameborder="0"
-                            allowtransparency="true"
-                            allowfullscreen="true"
-                            scrolling="no"
-                            allow="encrypted-media"
-                            src="https://www.facebook.com/v2.5/plugins/page.php?adapt_container_width=true&amp;app_id=726744260789964&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df9b78a0e0e061c007%26domain%3Dantique-watches.net%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fantique-watches.net%252Ff2a750f40a5fee36a%26relation%3Dparent.parent&amp;container_width=295&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fantique.watches.gmbh%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false&amp;width=295"
-                            style="border: none; visibility: visible; width: 295px; height: 125px;"
-                        ></iframe>
                     </div>
                 </div>
             </div>
