@@ -23,7 +23,7 @@
         {% if stock === 0 %}
             <span class="product-delivery--item not-available">{{ 'shipping.soldOut'|trans }}</span>
         {% elseif product.deliveryTime.name %}
-            <span class="product-delivery--item available">{{ 'shipping.available'|trans }} {{ product.deliveryTime.name }}</span>
+            <span class="product-delivery--item available">{{ 'shipping.available'|trans }} {{ product.deliveryTime.name }}**</span>
         {% elseif product.shippingFree %}
             <span class="product-delivery--item available">{{ 'shipping.freeShipping'|trans }}</span>
         {% endif %}

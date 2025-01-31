@@ -42,7 +42,9 @@
             id="info-about-function-tab-panel"
             role="tabpanel"
             aria-labelledby="description-tab">
-        {{page.product.customFields.custom_product_more_info_about_function | raw }}
+        <div class="p-3">
+            {{page.product.customFields.custom_product_more_info_about_function | raw }}
+        </div>
     </div>
 {% endblock %}
 

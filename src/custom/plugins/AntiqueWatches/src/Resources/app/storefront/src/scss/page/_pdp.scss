@@ -143,10 +143,9 @@
 
 		.product-detail-tabs-content {
 			border: 1px solid #dadae5;
-
 			display: none;
 
-			@include media-breakpoint-up(md) {
+			@media (min-width: 576px) {
 				display: flex;
 			}
 		}
@@ -183,6 +182,20 @@
 				&:hover {
 					color: #000;
 				}
+			}
+		}
+	}
+
+	.card-tabs {
+		.nav-item {
+			width: 100%;
+
+			@media (min-width: 576px) {
+				width: auto;
+			}
+
+			.product-detail-tab-preview {
+				white-space: initial;
 			}
 		}
 	}

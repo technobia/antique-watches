@@ -16,11 +16,19 @@
     p {
       font-size: 12px;
       margin-bottom: 20px;
+
+      span {
+        display: block;
+      }
     }
 
     a {
       font-size: 12px;
     }
+  }
+
+  &-extra-information {
+
   }
 
   &-copyright {
