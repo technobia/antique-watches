@@ -2,6 +2,11 @@
   padding-top: 20px;
 }
 
+.is-act-confirmpage .checkout {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .checkout {
   @include media-breakpoint-up(md) {
     padding-left: 20px;
